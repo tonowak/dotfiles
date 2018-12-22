@@ -8,8 +8,9 @@ function link() {
 	ln -s $from $to
 }
 
-link neofetch neofetch/config.conf
-link trizen trizen/trizen.conf
+link compton compton.conf
+link i3 i3/config
+link i3-gaps-fix gtk-3.0/gtk.css
 link termite termite/config
 link polybar polybar/config
-link i3-gaps-fix gtk-3.0/gtk.css
+link neofetch neofetch/config.conf
