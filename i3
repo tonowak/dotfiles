@@ -1,17 +1,12 @@
-for_window [class="^.*"] border pixel 0
-gaps inner 20
 exec --no-startup-id feh --randomize --bg-scale ~/.config/wall/*
 exec --no-startup-id redshift
 exec --no-startup-id compton
 exec --no-startup-id polybar top
-exec --no-startup-id /usr/lib/notify-osd-customizable/notify-osd
-# exec --no-startup-id ldm -u tonowak
+exec --no-startup-id dunst
+exec --no-startup-id greenglip daemon
+exec --no-startup-id sudo ldm -u tonowak
 
-# swapping caps and escape
-# exec setxkbmap -option caps:swapescape
-# making right shift work like windows key (like $mod)
-exec zsh .config/left_shift
-
+# Binding keys to scripts
 bindsym XF86MonBrightnessDown exec "light -U 10"
 bindsym XF86MonBrightnessUp exec "light -A 10"
 bindsym XF86AudioMute exec pulseaudio-ctl mute
@@ -22,24 +17,35 @@ bindsym XF86AudioPrev exec ~/.config/spotify-script prev
 bindsym XF86AudioNext exec ~/.config/spotify-script next
 bindsym Print exec gnome-screenshot
 
+# colors         border  backgr  text    indic   child_border
+client.focused   #3d4148 #000000 #abb2bf #98c379 #3d4148
+client.unfocused #282c34 #000000 #abb2bf #98c379 #282c34
+
+# border sizes
+smart_borders on
+for_window [class="^.*"] border pixel 3
+gaps inner 20
+
 assign [class="Chromium"] "2: web"
 assign [class="Messenger"] "3: messenger"
 assign [class="discord"] "4: discord"
+assign [class="spotify"] "4: discord"
 
 exec termite
 exec chromium
-exec messengerfordesktop
+exec /opt/messengerfordesktop/messengerfordesktop
 exec discord
+exec spotify
 
 set $mod mod4
 
 bindsym $mod+t exec i3lock-fancy
 
 # Font for window titles
-font pango:Ubuntu Mono Regular 8
-font pango:DejaVu Sans Mono 8
-font pango:Font Awesome 5 Free Solid 8
-font pango:Wuncon Siji Regular 8
+font pango:Ubuntu Mono Regular 16
+font pango:DejaVu Sans Mono 16
+font pango:Font Awesome 5 Free Solid 16
+font pango:Wuncon Siji Regular 16
 
 focus_follows_mouse no
 
@@ -53,11 +59,8 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec rofi -show run -config ~/.config/rofi/config
+bindsym $mod+d exec ~/.config/rofi/scripts/main_menu.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -166,8 +169,3 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-         # status_command i3status
-# }
