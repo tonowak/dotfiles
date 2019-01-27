@@ -3,6 +3,7 @@
 all='
 Chrome (chromium) # chromium
 Terminal (termite) # termite
+Password Manager # passmenu --type
 Spotify # spotify
 Discord # discord
 Messenger # /opt/messengerfordesktop/messengerfordesktop
