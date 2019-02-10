@@ -1,0 +1,14 @@
+#! /bin/bash
+
+#DMENU_CMD="dmenu -f -i -dim 0.5 -h 17 -p slip -fn gohup -w 2560 -y 712.5 -nb '#021b21' -nf '#e8dfd6' -sb '#f2f1b9' -sf '#032c36'"
+
+DMENU_CMD="rofi -dmenu"
+RECORD_PIDFILE="/tmp/slip_record.pid"
+IMAGES="$HOME/Media/Pictures"
+VIDEOS="$HOME/Media/Videos"
+DMENU_PROMPT="slip"
+
+# Set to 1 if sound should be included in recordings.
+SOUND=1
+# Set to 1 if slip shouldn't upload.
+NOUPLOAD=0

@@ -1,13 +1,14 @@
 ZSH=/usr/share/oh-my-zsh/
-ZSH_THEME="robbyrussell"
+ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+ZSH_THEME="robbyrussell-modified"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
 )
 
-export LANG=pl_PL.UTF-8
-# export LANG=en_US.UTF-8
+# export LANG=pl_PL.UTF-8
+export LANG=en_US.UTF-8
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
