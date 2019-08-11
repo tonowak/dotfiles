@@ -1,7 +1,8 @@
+# Run startup applications
 exec feh --randomize --bg-scale ~/.config/wall/*
 exec redshift
 exec compton
-exec polybar top
+exec --no-startup-id polybar top
 exec dunst
 exec greenclip daemon
 exec sudo ldm -u tonowak
@@ -19,39 +20,55 @@ bindsym Print                 exec slip
 
 set $black          #000000
 set $text           #abb2bf
-set $focused_border #282c34
-set $nofocus_border #282c34
+set $focused_border #444444
+set $nofocus_border #333333
 set $urgent_border  #e06c75
-# colors                 border          backgr text  indic           child_border
-client.focused           $focused_border $black $text $focused_border $focused_border
-client.focused_inactive	 $nofocus_border $black $text $nofocus_border $nofocus_border
-client.unfocused         $nofocus_border $black $text $nofocus_border $nofocus_border
-client.urgent            $urgent_border  $black $text $urgent_border  $urgent_border
+# colors                 border          backgr          text  indic           child_border
+client.focused           $focused_border $focused_border $text $focused_border $focused_border
+client.focused_inactive	 $nofocus_border $nofocus_border $text $nofocus_border $nofocus_border
+client.unfocused         $nofocus_border $nofocus_border $text $nofocus_border $nofocus_border
+client.urgent            $urgent_border  $black          $text $urgent_border  $urgent_border
 
 # border sizes
 # smart_borders on
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 8
 gaps inner 20
 
-assign [class="Chromium"] "2: web"
-assign [class="Messenger"] "3: messenger"
-assign [class="discord"] "4: discord"
-assign [class="Spotify"] "4: discord"
+for_window [class="Gnome*|Nautilus|File-roller|Transmission|Eog|Gucharmap|Pavucontrol"] floating enable
 
+set $ws1 "1: code"
+set $ws2 "2: web"
+set $ws3 "3: messenger"
+set $ws4 "4: discord"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+
+# assign [class="Chromium"] $ws2
+assign [class="Messenger"] $ws3
+assign [class="discord"] $ws4
+assign [class="Spotify"] $ws4
+
+# Run startup window applications
 exec termite
-exec chromium
+exec brave
 exec /opt/messengerfordesktop/messengerfordesktop
 exec discord
-exec spotify
+# exec --no-startup-id spotify
+exec --no-startup-id LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U
+for_window [class="Spotify"] move to workspace $ws4
+for_window [class="Brave"] move to workspace $ws2
 
 set $mod mod4
-
-bindsym $mod+t exec i3lock-fancy
+bindsym $mod+t exec ~/.config/i3/lock.sh
 # Font for window titles
-font pango:Ubuntu Mono Regular 10
-font pango:DejaVu Sans Mono 10
-font pango:Font Awesome 5 Free Solid 10
-font pango:Wuncon Siji Regular 10
+font pango:Font Awesome 5 Free Solid, Ubuntu Mono Regular 15
+# font pango:Font Awesome 5 Free Solid 15
+# font pango:Wuncon Siji Regular 15
+# font pango:Ubuntu Mono Regular 15
+# font pango:DejaVu Sans Mono 15
 
 focus_follows_mouse no
 
@@ -93,7 +110,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+g split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -107,7 +124,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+p floating toggle
+bindsym $mod+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+p focus mode_toggle
@@ -119,33 +136,31 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace "1: code"
-bindsym $mod+2 workspace "2: web"
-bindsym $mod+3 workspace "3: messenger"
-bindsym $mod+4 workspace "4: discord"
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace "1: code"
-bindsym $mod+Shift+2 move container to workspace "2: web"
-bindsym $mod+Shift+3 move container to workspace "3: messenger"
-bindsym $mod+Shift+4 move container to workspace "4: discord"
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+z restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -173,5 +188,8 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r exec "i3-msg class slop && ~/.config/i3/slopsize.sh"
+bindsym $mod+Shift+r mode "resize"
 
+bindsym $mod+n move scratchpad
+bindsym $mod+Shift+n scratchpad show

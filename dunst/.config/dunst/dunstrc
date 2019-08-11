@@ -10,8 +10,10 @@
     separator_height = 0            # Draw a line of "separator_height" pixel height between two notifications.
     padding = 8                     # Padding between text and separator.
     horizontal_padding = 8 
-    frame_color = "#3d4148"
-	frame_width = 3
+    #frame_color = "#3d4148"
+	#frame_width = 3
+	frame_color = "#444444"
+	frame_width = 8
     separator_color = auto
 
     sort = yes                      # Sort messages by urgency.
@@ -45,7 +47,7 @@
     always_run_script = true        # Always run rule-defined scripts, even if the notification is suppressed
     title = Dunst                   # Define the title of the windows spawned by dunst
     class = Dunst                   # Define the class of the windows spawned by dunst
-    startup_notification = false    # Print a notification on startup.
+    startup_notification = false     # Print a notification on startup.
 
     force_xinerama = false
 [experimental]
@@ -72,13 +74,13 @@
 [urgency_low]
     background = "#000000"
     foreground = "#98c379"
-    timeout = 20
+    timeout = 0
     #icon = /path/to/icon
 
 [urgency_normal]
     background = "#000000"
     foreground = "#e1e4e8"
-    timeout = 20
+    timeout = 0
     #icon = /path/to/icon
 
 [urgency_critical]
