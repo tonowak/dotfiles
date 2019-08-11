@@ -27,6 +27,7 @@ Character Map # gucharmap
 Steam # steam
 Volume Control (pulseaudio) # pavucontrol
 Libre Office # libreoffice
+Sublime Text 3 # subl
 '
 
 dmenu_input=""

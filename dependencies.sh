@@ -33,4 +33,4 @@ install 7z wget bc clang xclip stow
 install i3lock-fancy-git neofetch feh highlight
 
 # applications
-install redshift spotify chromium
+install redshift spotify chromium steam
