@@ -36,4 +36,4 @@ install xorg-xinput
 install xdotool slop
 
 # applications
-install redshift spotify chromium
+install redshift spotify chromium steam
