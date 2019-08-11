@@ -1,12 +1,12 @@
 #!/bin/zsh
 
 all='
-Chrome (chromium) # chromium
+Brave # brave
 Terminal (termite) # termite
 Password Manager # passmenu --type
 Spotify # spotify
 Discord # discord
-Messenger # /opt/messengerfordesktop/messengerfordesktop
+Messenger # /home/tonowak/.config/rofi/scripts/messenger.sh
 Lock Screen # i3lock-fancy
 Copy/Paste Clipboard # /home/tonowak/.config/rofi/scripts/clipboard.sh
 Rofi (terminal command) # rofi -show run
@@ -14,6 +14,7 @@ WiFi # /home/tonowak/.config/rofi/scripts/wifi.sh
 SSH # rofi -show ssh
 Open windows (window switcher) # rofi -show window
 Calculator # rofi -show calc -modi calc -no-show-match -no-sort
+Clocks / Stoper / Timer # gnome-clocks
 Video Player (vlc) # vlc
 Image Viewer (eog) # eog
 Screenshot / Recording # slip
@@ -21,7 +22,7 @@ File Manager (Nautilus) # nautilus
 Archive Manager (file-roller) # file-roller
 Torrent Client (transmission) # transmission-gtk
 Disk Utility # gnome-disks
-USB Live CD Creator # usb-creator-gtk
+USB Live CD Creator # sudo usb-creator-gtk
 Removable Media # udiskie-dmenu
 Character Map # gucharmap
 Steam # steam

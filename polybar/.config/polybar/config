@@ -1,21 +1,23 @@
 [colors]
-background = #cc0f0f0f
+# background = #cc0f0f0f
+background = #c00f0f0f
 background-alt = #cc000000
 foreground = #ddd
 foreground-alt = #aaa
 primary = #cc777777
 secondary = #e60053
 alert = #bbdc4c46
-frame = #282c34
+# frame = #282c34
+frame = #444444
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 35
-;offset-x = 1%
-;offset-y = 1%
+offset-x = 0%
+offset-y = 0%
 ;radius = 6.0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -23,13 +25,13 @@ foreground = ${colors.foreground}
 ;line-size = 3
 ;line-color = #282c34
 
-underline-size = 3
+underline-size = 0
 underline-color = ${colors.frame}
 
-border-bottom-size = 3
+border-bottom-size = 8
 border-bottom-color = ${colors.frame}
 
-padding-left = 1
+padding-left = 0
 padding-right = 2
 
 module-margin-left = 0
@@ -49,7 +51,7 @@ font-5 = Wuncon Siji:pixelsize=10;0
 modules-left = i3
 modules-center = 
 # modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = volume wlan eth battery date powermenu
+modules-right = info-hackspeed volume wlan eth battery date powermenu
 
 tray-position = center
 tray-padding = 0
@@ -64,6 +66,11 @@ wm-restack = i3
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/info-hackspeed]
+type = custom/script
+exec = ~/script.sh
+tail = true
 
 [module/xwindow]
 type = internal/xwindow
@@ -154,6 +161,8 @@ label-visible-padding = ${self.label-focused-padding}
 label-urgent = %icon%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+border-left-size = 8
 
 [module/mpd]
 type = internal/mpd
