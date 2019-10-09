@@ -188,7 +188,8 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r exec "i3-msg class slop && ~/.config/i3/slopsize.sh"
+bindsym $mod+r exec "~/.config/i3/slopsize.sh"
+# bindsym $mod+r exec "i3-msg class slop && ~/.config/i3/slopsize.sh"
 bindsym $mod+Shift+r mode "resize"
 
 bindsym $mod+n move scratchpad

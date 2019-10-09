@@ -26,4 +26,12 @@ if [[ -r ~/src/aliases.sh ]]; then
   . ~/src/aliases.sh
 fi
 
+alias cp="cp -i"
+
+
+# To delete:
+
+export CGO_CFLAGS="-I/tmp/trizen-tonowak/lxd/src/go/deps/sqlite/ -I/tmp/trizen-tonowak/lxd/src/go/deps/libco/ -I/tmp/trizen-tonowak/lxd/src/go/deps/raft/include/ -I/tmp/trizen-tonowak/lxd/src/go/deps/dqlite/include/"
+export CGO_LDFLAGS="-L/tmp/trizen-tonowak/lxd/src/go/deps/sqlite/.libs/ -L/tmp/trizen-tonowak/lxd/src/go/deps/libco/ -L/tmp/trizen-tonowak/lxd/src/go/deps/raft/.libs -L/tmp/trizen-tonowak/lxd/src/go/deps/dqlite/.libs/"
+export LD_LIBRARY_PATH="/tmp/trizen-tonowak/lxd/src/go/deps/sqlite/.libs/:/tmp/trizen-tonowak/lxd/src/go/deps/libco/:/tmp/trizen-tonowak/lxd/src/go/deps/raft/.libs/:/tmp/trizen-tonowak/lxd/src/go/deps/dqlite/.libs/"
 
