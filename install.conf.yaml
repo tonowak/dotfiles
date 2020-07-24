@@ -1,0 +1,117 @@
+- defaults:
+    link:
+      create: true
+      relink: false
+
+- clean: ['~', '~/.config']
+
+# fonts
+- pacman:
+    - powerline-fonts-git
+    - noto-fonts
+    - ttf-ubuntu-font-family
+    - ttf-ms-fonts
+- link:
+    ~/.config/fontconfig/conf.d/70-no-bitmaps.conf: /etc/fonts/conf.avail/70-no-bitmaps.conf
+    ~/.config/fontconfig/conf.d/10-sub-pixel-rgb.conf: /etc/fonts/conf.avail/10-sub-pixel-rgb.conf
+    ~/.config/fontconfig/conf.d/11-lcdfilter-default.conf: /etc/fonts/conf.avail/11-lcdfilter-default.conf
+    ~/.config/fontconfig/fonts.conf: fonts/local.conf
+
+# necessary programs
+- pacman:
+    - gvim
+    - alacritty
+    - rofi
+      # volume
+    - pulseaudio
+    - pavucontrol
+    - alsa-utils
+- yay:
+    - awesome-git
+    - awmtt
+    - brave-bin
+    - oh-my-zsh-git
+    - picom-tryone-git
+- shell:
+    -
+      command: "./zsh/change_from_bash_to_zsh.sh"
+      stdin: true
+
+# link main config files
+- link:
+    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    ~/.config/picom/picom.conf: picom/picom.conf
+    ~/.vimrc: vim/vimrc
+    ~/.vim/colors/one.vim: vim/one.vim
+    ~/.zshrc: zsh/zshrc
+    ~/.xinitrc: x11/xinitrc
+    ~/.Xresources: x11/Xresources
+    ~/.config/git/config: git/config
+    ~/.config/awesome: awesome
+    ~/.config/wallpaper.jpg: wallpaper/wallhaven-4xklev.jpg
+
+  # themes
+- pacman:
+    - papirus-icon-theme
+    - materia-gtk-theme
+- yay:
+    - bibata-cursor-theme
+- link:
+    ~/.config/gtk-3.0/settings.ini: themes/gtk/settings.ini
+    ~/.icons/default/index.theme: themes/x11/index.theme
+
+# pass and other security stuff
+- pacman:
+    - pass
+    - browserpass-chromium
+- shell:
+    command: "./pass/configure_brave.sh"
+- yay:
+    - nordvpn-bin
+
+# file manager
+- pacman:
+    - dolphin
+    - kvantum-qt5
+    - qt5ct
+    - file-roller
+    - gnome-disk-utility
+- link:
+    ~/.config/dolphinrc: dolphin/dolphinrc
+    ~/.config/Kvantum: dolphin/Kvantum
+    ~/.config/qt5ct: dolphin/qt5ct
+
+# terminal tools
+- pacman:
+    - p7zip
+    - zip
+    - unzip
+    - neofetch
+    - wget
+    - bc
+    # C++
+    - gdb
+    - valgrind
+    - kcachegrind
+    # python
+    - python-django
+    - python-pip
+- yay:
+    - rar
+    - networkmanager-dispatcher-ntpd
+
+# GUI stuff
+- pacman:
+    - discord
+    - redshift
+    - feh
+    - eog
+    - xfce4-screenshooter
+    - liferea
+- link:
+    ~/.config/redshift: redshift
+
+# games
+- yay:
+    - multimc5 # switch to jre8: sudo archlinux-java set java-8-openjdk/jre
+    - openjdk8-src
