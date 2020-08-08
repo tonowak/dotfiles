@@ -117,6 +117,8 @@ awful.mouse.append_global_mousebindings({
 require("keybindings")
 require("rules")
 
+require('configuration.auto-start')
+
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)

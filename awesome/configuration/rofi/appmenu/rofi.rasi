@@ -1,5 +1,5 @@
 configuration {
-    font:                           "SF Pro Text Regular 10";
+    font:                           "sans-serif 10";
     show-icons:                     true;
     drun-display-format:            "{name}";
     fullscreen:                     false;
@@ -20,18 +20,19 @@ configuration {
     foreground-selected:            #ffffffFF;
     urgent:                         #E91E6366;
     urgent-selected:                #E91E6377;
+	default-font:					"sans-serif 11";
 }
 
 window {
     transparency:                   "real";
     background-color:               @background;
     text-color:                     @foreground;
-    height:                         720px;
-    width:                          1366px;
+    height:                         530px;
+    width:                          900px;
     location:                       northwest;
     anchor:                         northwest;
-    x-offset:                       0;
-    y-offset:                       0;
+    x-offset:                       510px;
+    y-offset:                       275px;
 }
 
 prompt {
@@ -40,8 +41,8 @@ prompt {
 
 button {
     action:                         "ok";
-    str:                            " ";
-    font:                           "FantasqueSansMono Nerd Font 11";
+    str:                            "";
+    font:                           @default-font;
     expand:                         false;
     text-color:                     @foreground;
     background-color:               @background;
@@ -50,7 +51,7 @@ button {
 }
 
 entry {
-    font:                           "SF Pro Text Regular 11";
+    font:                           @default-font;
     background-color:               @background;
     text-color:                     @foreground;
     expand:                         true;
@@ -81,7 +82,7 @@ inputbar {
     text-color:                     @foreground;
     expand:                         false;
     border-radius:                  6px;
-    margin:                         0px 430px 0px 430px;
+    margin:                         0px 200px 0px 200px;
     padding:                        10px 10px 10px 10px;
     position:                       north;
     children:                       [ entry-wrapper ];
@@ -89,7 +90,7 @@ inputbar {
 
 listview {
     background-color:               @background;
-    columns:                        7;
+    columns:                        5;
     spacing:                        4px;
     cycle:                          false;
     dynamic:                        true;
@@ -100,7 +101,7 @@ mainbox {
     background-color:               @background-color;
     children:                       [ inputbar, listview ];
     spacing:                        25px;
-    padding:                        45px 135px 25px 135px;
+    padding:                        10px 10px 10px 10px;
 }
 
 element {

@@ -3,42 +3,43 @@ local gears = require('gears')
 local beautiful = require('beautiful')
 
 local icons = require('icons.topbar')
+local apps = require('configuration.apps')
 
 local tags = {
 	{
 		icon = icons.terminal,
 		type = 'terminal',
-		default_app = 'alacritty',
+		default_app = apps.default.terminal,
 		screen = 1
 	},
 	{
 		icon = icons.web_browser,
 		type = 'brave',
-		default_app = 'brave',
+		default_app = apps.default.web_browser,
 		screen = 1
 	},
 	{
 		icon = icons.terminal,
 		type = 'code',
-		default_app = 'vim',
+		default_app = apps.default.text_editor,
 		screen = 1
 	},
 	{
 		icon = icons.social,
 		type = 'discord',
-		default_app = 'discord',
+		default_app = apps.default.discord,
 		screen = 1
 	},
 	{
 		icon = icons.music,
 		type = 'spotify',
-		default_app = 'alacritty',
+		default_app = apps.default.spotify,
 		screen = 1
 	},
 	{
 		icon = icons.terminal,
 		type = 'terminal3',
-		default_app = 'alacritty',
+		default_app = apps.default.terminal,
 		screen = 1
 	},
 }

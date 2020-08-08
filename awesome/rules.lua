@@ -63,6 +63,8 @@ ruled.client.connect_signal(
 					"Alacritty",
 					"Brave",
 					"Discord",
+					"Dolphin",
+					"Spotify"
 				}
 			},
 			properties = {

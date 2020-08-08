@@ -9,10 +9,12 @@ return {
 		text_editor 		= 'vim',
 		web_browser 		= 'brave',
 		file_manager 		= 'dolphin',
+		discord				= 'discord',
+		spotify				= 'env LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify',
 		-- network_manager 	= 'nm-connection-editor',
 		-- power_manager 	= 'xfce4-power-manager',
 		-- package_manager 	= 'pamac-manager',
-		lock 				= 'awesome-client "awesome.emit_signal(\'module::lockscreen_show\')"',
+		lock 				= 'light-locker-command -l',
 		-- quake 			= 'kitty --name QuakeTerminal',
 
 		rofiglobal			= 'rofi -dpi ' .. screen.primary.dpi .. 
@@ -31,30 +33,10 @@ return {
 	-- auto-start.lua module will start these
 
 	run_on_start_up = {
-
 		'picom -b --experimental-backends --dbus',
-		'blueman-applet',                                           	      								                    -- Bluetooth tray icon
-		'mpd',                                                          	          										    -- Music Server
-		'xfce4-power-manager',                                              	                    					    	-- Power manager
-		'/usr/lib/polkit-kde-authentication-agent-1 &' .. 
-		' eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', 	          									-- Credential manager
-		
-		'xrdb $HOME/.Xresources',                                                   	                						-- Load X Colors
-		'nm-applet',                                                                    	            						-- NetworkManager Applet
-		'pulseeffects --gapplication-service',                                              	        						-- Sound Equalizer
-		[[
-		xidlehook --not-when-fullscreen --not-when-audio --timer 600 \
-		"awesome-client 'awesome.emit_signal(\"module::lockscreen_show\")'" ""
-		]]																														-- Auto lock timer 
-
-		-- You can add more start-up applications here
+		'gpgconf --launch gpg-agent',
+		'redshift',
+		'setxkbmap pl',
+		'light-locker'
 	},
-
-	-- List of binaries/shell scripts that will execute a certain task
-
-	-- bins = {
-		-- full_screenshot = bin_dir .. 'snap full',              					                    							-- Full Screenshot
-		-- area_screenshot = bin_dir .. 'snap area',			                                        							-- Area Selected Screenshot
-		-- update_profile  = bin_dir .. 'profile-image'																			-- Update profile picture
-	-- }
 }

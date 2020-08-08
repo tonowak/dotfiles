@@ -6,6 +6,7 @@ local clickable_container = require('topbar.widget.clickable-container')
 local dpi = require('beautiful').xresources.apply_dpi
 
 local icons = require('icons.topbar')
+local apps = require('configuration.apps')
 
 local return_button = function()
 
@@ -35,7 +36,7 @@ local return_button = function()
 				1,
 				nil,
 				function()
-					awesome.emit_signal("module::exit_screen_show")
+					awful.spawn(apps.default.lock)
 				end
 			)
 		)

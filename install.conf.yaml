@@ -9,6 +9,7 @@
 - pacman:
     - powerline-fonts-git
     - noto-fonts
+    - noto-fonts-emoji
     - ttf-ubuntu-font-family
     - ttf-ms-fonts
 - link:
@@ -21,7 +22,6 @@
 - pacman:
     - gvim
     - alacritty
-    - rofi
       # volume
     - pulseaudio
     - pavucontrol
@@ -32,6 +32,7 @@
     - brave-bin
     - oh-my-zsh-git
     - picom-tryone-git
+    - rofi-git
 - shell:
     -
       command: "./zsh/change_from_bash_to_zsh.sh"
@@ -44,7 +45,7 @@
     ~/.vimrc: vim/vimrc
     ~/.vim/colors/one.vim: vim/one.vim
     ~/.zshrc: zsh/zshrc
-    ~/.xinitrc: x11/xinitrc
+    ~/.xprofile: x11/xprofile
     ~/.Xresources: x11/Xresources
     ~/.config/git/config: git/config
     ~/.config/awesome: awesome
@@ -89,13 +90,20 @@
     - neofetch
     - wget
     - bc
+    - trash-cli
+    - gtop
     # C++
     - gdb
     - valgrind
     - kcachegrind
+    - lib32-glibc
+    - clang
     # python
     - python-django
     - python-pip
+    # filesystems
+    - ntfs-3g
+    - rsync
 - yay:
     - rar
     - networkmanager-dispatcher-ntpd
@@ -108,10 +116,25 @@
     - eog
     - xfce4-screenshooter
     - liferea
+    - gnome-clocks
+    - baobab
+    - gimp
+    - nvidia-settings
+- yay:
+    - sublime-text-dev
+    - spotify-adblock-linux
 - link:
     ~/.config/redshift: redshift
+
+# boot
+- pacman:
+    - lightdm-webkit-theme-litarvan
+    - light-locker
+- yay:
+    - refind-theme-dreary-git
 
 # games
 - yay:
     - multimc5 # switch to jre8: sudo archlinux-java set java-8-openjdk/jre
     - openjdk8-src
+    - steam # uncomment the [multilib] section in /etc/pacman.conf
