@@ -92,6 +92,8 @@
     - bc
     - trash-cli
     - gtop
+    # latex
+    - texlive-most
     # C++
     - gdb
     - valgrind
@@ -101,6 +103,7 @@
     # python
     - python-django
     - python-pip
+    - ipython
     # filesystems
     - ntfs-3g
     - rsync
@@ -120,6 +123,7 @@
     - baobab
     - gimp
     - nvidia-settings
+    - transmission-gtk
 - yay:
     - sublime-text-dev
     - spotify-adblock-linux

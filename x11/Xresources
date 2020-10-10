@@ -5,4 +5,4 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
-Xcursor.theme: Bibata_Oil
+Xcursor.theme: Bibata-Modern-Classic
