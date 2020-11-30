@@ -26,7 +26,10 @@
     - pulseaudio
     - pavucontrol
     - alsa-utils
+    - xorg-xinit
+    - xterm
 - yay:
+    # - awesome-git
     - awesome-git
     - awmtt
     - brave-bin
@@ -43,7 +46,7 @@
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/picom/picom.conf: picom/picom.conf
     ~/.vimrc: vim/vimrc
-    ~/.vim/colors/one.vim: vim/one.vim
+    ~/.vim: vim
     ~/.zshrc: zsh/zshrc
     ~/.xprofile: x11/xprofile
     ~/.Xresources: x11/Xresources
@@ -94,6 +97,7 @@
     - gtop
     # latex
     - texlive-most
+    - ghostscript
     # C++
     - gdb
     - valgrind
@@ -124,6 +128,8 @@
     - gimp
     - nvidia-settings
     - transmission-gtk
+    - zathura
+    - zathura-pdf-mupdf
 - yay:
     - sublime-text-dev
     - spotify-adblock-linux

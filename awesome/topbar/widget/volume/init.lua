@@ -40,7 +40,7 @@ local return_button = function()
 
 			local volume_level = volume_slider:get_value()
 			
-			awful.spawn('amixer -c Sound sset PCM ' .. 
+			awful.spawn('amixer -c 1 sset Master ' .. 
 				volume_level .. '%',
 				false
 			)
@@ -86,7 +86,7 @@ local return_button = function()
 
 	local update_slider = function()
 		awful.spawn.easy_async_with_shell(
-			[[bash -c "amixer -c Sound sget PCM"]],
+			[[bash -c "amixer -c 1 sget Master"]],
 			function(stdout)
 
 				local volume = string.match(stdout, '(%d?%d?%d)%%')
