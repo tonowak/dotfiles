@@ -136,6 +136,11 @@
 - link:
     ~/.config/redshift: redshift
 
+# video
+- pacman:
+    - vlc
+    - obs-studio
+
 # boot
 - pacman:
     - lightdm-webkit-theme-litarvan

@@ -3,3 +3,5 @@
 	name = Tomasz Nowak
 [pull]
 	rebase = true
+[commit]
+	gpgsign = true
