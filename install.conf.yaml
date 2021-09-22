@@ -10,6 +10,8 @@
     - powerline-fonts-git
     - noto-fonts
     - noto-fonts-emoji
+    - noto-fonts-cjk
+    - noto-fonts-extra
     - ttf-ubuntu-font-family
     - ttf-ms-fonts
 - link:
@@ -18,46 +20,53 @@
     ~/.config/fontconfig/conf.d/11-lcdfilter-default.conf: /etc/fonts/conf.avail/11-lcdfilter-default.conf
     ~/.config/fontconfig/fonts.conf: fonts/local.conf
 
-# necessary programs
+# sway
 - pacman:
-    - gvim
+    - sway
     - alacritty
-      # volume
+    - waybar
+    - wofi # will I use it?
+    - xorg-xwayland
+    - xorg-xlsclients
+    - qt5-wayland
+    - glfw-wayland
+  # - rofi-git
+
+# volume
+- pacman:
     - pulseaudio
     - pavucontrol
     - alsa-utils
-    - xorg-xinit
-    - xterm
+
+# terminal programs
+- pacman:
+    - gvim
 - yay:
-    # - awesome-git
-    - awesome-git
-    - awmtt
-    - brave-bin
     - oh-my-zsh-git
-    - picom-tryone-git
-    - rofi-git
 - shell:
     -
       command: "./zsh/change_from_bash_to_zsh.sh"
       stdin: true
 
+# browser
+- yay:
+    - brave-bin
+
 # link main config files
 - link:
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
-    ~/.config/picom/picom.conf: picom/picom.conf
     ~/.vimrc: vim/vimrc
     ~/.vim: vim
     ~/.zshrc: zsh/zshrc
     ~/.xprofile: x11/xprofile
     ~/.Xresources: x11/Xresources
     ~/.config/git/config: git/config
-    ~/.config/awesome: awesome
     ~/.config/wallpaper.jpg: wallpaper/wallhaven-4xklev.jpg
 
-  # themes
+# themes
 - pacman:
     - papirus-icon-theme
-    - materia-gtk-theme
+  # - materia-gtk-theme
 - yay:
     - bibata-cursor-theme
 - link:
@@ -73,83 +82,3 @@
 - yay:
     - nordvpn-bin
 
-# file manager
-- pacman:
-    - dolphin
-    - kvantum-qt5
-    - qt5ct
-    - file-roller
-    - gnome-disk-utility
-- link:
-    ~/.config/dolphinrc: dolphin/dolphinrc
-    ~/.config/Kvantum: dolphin/Kvantum
-    ~/.config/qt5ct: dolphin/qt5ct
-
-# terminal tools
-- pacman:
-    - p7zip
-    - zip
-    - unzip
-    - neofetch
-    - wget
-    - bc
-    - trash-cli
-    - gtop
-    # latex
-    - texlive-most
-    - ghostscript
-    # C++
-    - gdb
-    - valgrind
-    - kcachegrind
-    - lib32-glibc
-    - clang
-    # python
-    - python-django
-    - python-pip
-    - ipython
-    # filesystems
-    - ntfs-3g
-    - rsync
-- yay:
-    - rar
-    - networkmanager-dispatcher-ntpd
-
-# GUI stuff
-- pacman:
-    - discord
-    - redshift
-    - feh
-    - eog
-    - xfce4-screenshooter
-    - liferea
-    - gnome-clocks
-    - baobab
-    - gimp
-    - nvidia-settings
-    - transmission-gtk
-    - zathura
-    - zathura-pdf-mupdf
-- yay:
-    - sublime-text-dev
-    - spotify-adblock-linux
-- link:
-    ~/.config/redshift: redshift
-
-# video
-- pacman:
-    - vlc
-    - obs-studio
-
-# boot
-- pacman:
-    - lightdm-webkit-theme-litarvan
-    - light-locker
-- yay:
-    - refind-theme-dreary-git
-
-# games
-- yay:
-    - multimc5 # switch to jre8: sudo archlinux-java set java-8-openjdk/jre
-    - openjdk8-src
-    - steam # uncomment the [multilib] section in /etc/pacman.conf
