@@ -7,5 +7,5 @@ if ! grep -q 'litarvan' /etc/lightdm/lightdm-webkit2-greeter.conf; then
 
 	sudo sed -i 's/^webkit_theme.*/webkit_theme        = litarvan/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 
-	sudo cp wallpaper/* /usr/share/backgrounds/
+	sudo cp ../wallpaper/* /usr/share/backgrounds/
 fi

@@ -15,9 +15,9 @@
     - ttf-ubuntu-font-family
     - ttf-ms-fonts
 - link:
-    ~/.config/fontconfig/conf.d/70-no-bitmaps.conf: /etc/fonts/conf.avail/70-no-bitmaps.conf
-    ~/.config/fontconfig/conf.d/10-sub-pixel-rgb.conf: /etc/fonts/conf.avail/10-sub-pixel-rgb.conf
-    ~/.config/fontconfig/conf.d/11-lcdfilter-default.conf: /etc/fonts/conf.avail/11-lcdfilter-default.conf
+    ~/.config/fontconfig/conf.d/70-no-bitmaps.conf: /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf
+    ~/.config/fontconfig/conf.d/10-sub-pixel-rgb.conf: /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf
+    ~/.config/fontconfig/conf.d/11-lcdfilter-default.conf: /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf
     ~/.config/fontconfig/fonts.conf: fonts/local.conf
 
 # sway
@@ -43,10 +43,10 @@
     - gvim
 - yay:
     - oh-my-zsh-git
-- shell:
-    -
-      command: "./zsh/change_from_bash_to_zsh.sh"
-      stdin: true
+# - shell:
+  # -
+      # command: "./zsh/change_from_bash_to_zsh.sh"
+      # stdin: true
 
 # browser
 - yay:
@@ -54,6 +54,7 @@
 
 # link main config files
 - link:
+    ~/.config/sway: sway
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.vimrc: vim/vimrc
     ~/.vim: vim
@@ -78,7 +79,21 @@
     - pass
     - browserpass-chromium
 - shell:
-    command: "./pass/configure_brave.sh"
+  - sh pass/configure_brave.sh
 - yay:
     - nordvpn-bin
+
+  # boot
+- pacman:
+    - lightdm-webkit-theme-litarvan
+    - light-locker
+    - xorg-server
+- yay:
+    - refind-theme-dreary-git
+- shell:
+  -
+    command: "sh lightdm/enable_lightdm.sh"
+    stdout: true
+    stderr: true
+
 
