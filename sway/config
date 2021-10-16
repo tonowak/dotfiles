@@ -6,21 +6,33 @@ set $down j
 set $up k
 set $right l
 
-# run alacritty, but on irtualbox don't use GLSL 3.30
+# run alacritty, but on Virtualbox don't use GLSL 3.30
 set $term LIBGL_ALWAYS_SOFTWARE=$([ $(whoami) == "virtualbox" ] && echo 1 || echo 0) alacritty
 
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu rofi -show drun -theme ~/dotfiles/rofi/tonowak_theme.rasi
 
 output * bg $HOME/.config/wallpaper.jpg fill
 
-exec light-locker
+exec env -u WAYLAND_DISPLAY light-locker
 exec kanshi
 
-font pango:Ubuntu 10
-default_border normal 1
+font pango:Ubuntu 12
+# for_window [title=".*"] floating enable
+# for_window [app_id="Alacritty"] floating disable
+# for_window [class="Brave-browser"] floating disable
+default_border normal 2
+default_floating_border pixel 2
+titlebar_border_thickness 2
+titlebar_padding 10 4
 gaps inner 20
 smart_borders off
 smart_gaps off
+
+client.focused #282828 #282828 #c8ccd4 #282828 #282828
+client.unfocused #282828 #282828 #828997 #98c379 #282828
+client.focused_inactive #282828 #282828 #828997 #98c379 #282828
+client.urgent #e06c75 #e06c75 #c8ccd4 #98c379 #e06c75
 
 focus_follows_mouse no
 focus_on_window_activation focus
@@ -163,25 +175,20 @@ mode "resize" {
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym r mode "default"
 }
 bindsym $mod+r mode "resize"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+	swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
+
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Materia-dark'
+    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+    gsettings set $gnome-schema cursor-theme 'Bibata-Modern-Classic'
+    gsettings set $gnome-schema font-name 'sans 11'
+}

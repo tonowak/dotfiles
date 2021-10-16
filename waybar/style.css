@@ -1,0 +1,139 @@
+* {
+    border: 0px solid #282828;
+    border-radius: 0px;
+    font-family: sans-serif;
+    font-size: 16px;
+    min-height: 0;
+    padding: 1px;
+}
+
+window#waybar {
+    background-color: #282828;
+    background: transparent;
+    color: #c8ccd4;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    border-radius: 0;
+}
+
+window > box {
+    /*margin-top: 20px;*/
+    margin-left: 20px;
+    margin-right: 20px;
+    background: #282828;
+    color: #c8ccd4;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+label:focus {
+    background-color: #282c34;
+}
+
+@keyframes blink {
+    to {
+        background-color: #c8ccd4;
+        color: #282c34;
+    }
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#workspaces,
+#clock,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd {
+    padding: 0 10px;
+    margin: 4px 4px 4px 4px;
+    color: #282828;
+}
+
+#custom-launch {
+    margin-right: 20px;
+    margin-left: 16px;
+    font-size: 17px;
+    color: #81a1c1;
+}
+
+#workspaces button {
+    padding: 5px 5px;
+    background-color: transparent;
+    margin-left: 1px;
+	color: #828997;
+}
+
+#workspaces button:hover {
+    background-color: #c8ccd4;
+    color: #282828;
+}
+
+#workspaces button.focused {
+    /* background-color: #e06c75; */
+    color: #c8ccd4;
+}
+
+#workspaces button.urgent {
+    background-color: #e04753;
+}
+
+#custom-spotify {
+    font-size: 17px;
+    font-weight: 500;
+    color: #98c379;
+}
+
+#pulseaudio {
+    color: #e06c75;
+}
+
+#pulseaudio.muted {
+    background-color: #81a1c1;
+    color: #282c34;
+}
+
+#backlight {
+    color: #e5c07b;
+}
+
+#network {
+    color: #81a1c1;
+}
+
+#battery {
+    color: #e06c75;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #e06c75;
+}
+
+#battery.critical:not(.charging) {
+    color: #e06c75;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#clock {
+    color: #98c379;
+}
+
+#custom-off {
+    margin-right: 16px;
+    margin-left: 20px;
+    font-size: 17px;
+    color: #e06c75;
+}

@@ -12,6 +12,7 @@
     - noto-fonts-emoji
     - noto-fonts-cjk
     - noto-fonts-extra
+    - otf-font-awesome
     - ttf-ubuntu-font-family
     - ttf-ms-fonts
 - link:
@@ -25,12 +26,11 @@
     - sway
     - alacritty
     - waybar
-    - wofi # will I use it?
     - xorg-xwayland
     - xorg-xlsclients
     - qt5-wayland
     - glfw-wayland
-  # - rofi-git
+    - rofi-lbonn-wayland
 
 # volume
 - pacman:
@@ -55,7 +55,10 @@
 # link main config files
 - link:
     ~/.config/sway: sway
-    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    ~/.config/kanshi: kanshi
+    ~/.config/waybar: waybar
+    ~/.config/alacritty: alacritty
+    ~/.config/rofi: rofi
     ~/.vimrc: vim/vimrc
     ~/.vim: vim
     ~/.zshrc: zsh/zshrc
@@ -67,11 +70,11 @@
 # themes
 - pacman:
     - papirus-icon-theme
-  # - materia-gtk-theme
+    - materia-gtk-theme
+      # - qogir-gtk-theme-git
 - yay:
     - bibata-cursor-theme
 - link:
-    ~/.config/gtk-3.0/settings.ini: themes/gtk/settings.ini
     ~/.icons/default/index.theme: themes/x11/index.theme
 
 # pass and other security stuff
@@ -96,4 +99,23 @@
     stdout: true
     stderr: true
 
+# file manager
+- pacman:
+    - nautilus
 
+# GUI stuff
+- pacman:
+    # - discord
+    - gammastep
+    - eog
+    # - xfce4-screenshooter
+    - liferea
+    - gnome-clocks
+    - baobab
+    - gimp
+    # - nvidia-settings
+    - transmission-gtk
+    - zathura
+    - zathura-pdf-mupdf
+      # - yay:
+    # - sublime-text-dev
