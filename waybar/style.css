@@ -1,14 +1,14 @@
 * {
-    border: 0px solid #282828;
+    border: 0px solid #181a20;
     border-radius: 0px;
-    font-family: sans-serif;
+    font-family: monospace, "Font Awesome 5 Free", "Symbols Nerd Font";
     font-size: 16px;
     min-height: 0;
     padding: 1px;
 }
 
 window#waybar {
-    background-color: #282828;
+    background-color: #181a20;
     background: transparent;
     color: #c8ccd4;
     transition-property: background-color;
@@ -18,9 +18,9 @@ window#waybar {
 
 window > box {
     /*margin-top: 20px;*/
-    margin-left: 20px;
-    margin-right: 20px;
-    background: #282828;
+    /*margin-left: 20px;
+    margin-right: 20px;*/
+    background: #181a20;
     color: #c8ccd4;
 }
 
@@ -48,21 +48,31 @@ label:focus {
 #network,
 #pulseaudio,
 #workspaces,
-#clock,
 #tray,
 #mode,
 #idle_inhibitor,
-#mpd {
+#mpd,
+#clock.1,
+#clock.2,
+#clock.3,
+#custom-lock,
+#custom-poweroff {
     padding: 0 10px;
     margin: 4px 4px 4px 4px;
-    color: #282828;
+    /*color: #181a20;*/
+	color: #828997;
+	font-size: 17px;
 }
 
+#clock.2 {
+    color: #c8ccd4;
+}
 #custom-launch {
     margin-right: 20px;
     margin-left: 16px;
-    font-size: 17px;
-    color: #81a1c1;
+    font-size: 18px;
+    /*color: #81a1c1;*/
+	color: #98c379;
 }
 
 #workspaces button {
@@ -73,12 +83,10 @@ label:focus {
 }
 
 #workspaces button:hover {
-    background-color: #c8ccd4;
-    color: #282828;
+    color: #c8ccd4;
 }
 
 #workspaces button.focused {
-    /* background-color: #e06c75; */
     color: #c8ccd4;
 }
 
@@ -92,30 +100,9 @@ label:focus {
     color: #98c379;
 }
 
-#pulseaudio {
-    color: #e06c75;
-}
-
 #pulseaudio.muted {
     background-color: #81a1c1;
     color: #282c34;
-}
-
-#backlight {
-    color: #e5c07b;
-}
-
-#network {
-    color: #81a1c1;
-}
-
-#battery {
-    color: #e06c75;
-}
-
-#battery.charging,
-#battery.plugged {
-    color: #e06c75;
 }
 
 #battery.critical:not(.charging) {
@@ -127,13 +114,3 @@ label:focus {
     animation-direction: alternate;
 }
 
-#clock {
-    color: #98c379;
-}
-
-#custom-off {
-    margin-right: 16px;
-    margin-left: 20px;
-    font-size: 17px;
-    color: #e06c75;
-}

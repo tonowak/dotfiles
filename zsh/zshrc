@@ -103,12 +103,9 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
-source /home/tonowak/src/aliases.sh
-
-# opam configuration
-test -r /home/tonowak/.opam/opam-init/init.zsh && . /home/tonowak/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-alias b=brave
 
 export PATH=$PATH:/home/tonowak/.local/bin/
 
+alias rsync='rsync -avz'
+
+source /home/tonowak/src/aliases.sh

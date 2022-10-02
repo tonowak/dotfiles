@@ -35,12 +35,15 @@
 # volume
 - pacman:
     - pulseaudio
+    - pulseaudio-bluetooth
     - pavucontrol
     - alsa-utils
 
 # terminal programs
 - pacman:
     - gvim
+    - man
+    - openssh
 - yay:
     - oh-my-zsh-git
 # - shell:
@@ -102,15 +105,16 @@
 # file manager
 - pacman:
     - nautilus
+    - android-file-transfer
 
 # GUI stuff
 - pacman:
     # - discord
-    - gammastep
     - eog
     # - xfce4-screenshooter
     - liferea
     - gnome-clocks
+    - gnome-disk-utility
     - baobab
     - gimp
     # - nvidia-settings
@@ -118,4 +122,74 @@
     - zathura
     - zathura-pdf-mupdf
       # - yay:
-    # - sublime-text-dev
+    - wl-clipboard
+    - anki
+    - audacity
+    - etcher-bin
+    - firefox
+    - gimp
+    - kcachegrind
+    - libreoffice-fresh
+    - lxappearance
+    - minecraft-launcher
+    - nextcloud
+    - nextcloud-client
+    - obs-studio
+    - polkit-gnome
+    - signal-cli
+    - signal-desktop
+    - spotify
+    - steam
+    - sublime-merge
+    - sublime-text-4
+    - telegram-desktop
+    - thunderbird
+    - thunderbird-i18n-pl
+    - vlc
+    - zoom
+- yay:
+    - wlsunset-git
+
+# bluetooth
+- pacman:
+    - bluez-utils
+
+# terminal stuff
+- pacman:
+    - aspell-pl
+    - binutils
+    - brightnessctl
+    - btrfs-progs
+    - clang
+    - cmake
+    - cups
+    - downgrade
+    - gcc
+    - gdc
+    - gtop
+    - htop
+    - inetutils
+    - ipython
+    - iw
+    - jdk-openjdk
+    - man-db
+    - man-pages
+    - maven
+    - nano
+    - net-tools
+    - networkmanager
+    - p7zip
+    - rar
+    - rsync
+    - rust
+    - rustup
+    - sudo
+    - texlive-most
+    - unzip
+    - valgrind
+    - virtualbox
+    - virtualbox-host-modules-arch
+    - wacom-utility
+    - zip
+- yay:
+    - sim-sip

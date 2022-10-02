@@ -34,5 +34,7 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'mattn/emmet-vim'
 
+Plug 'jasonccox/vim-wayland-clipboard'
+
 call plug#end()
 

@@ -114,10 +114,10 @@ colors:
   primary:
     # background: '#0f0f0f'
     # background: '#121212'
-    # background: '#181a20'
+    background: '#181a20'
     # background: '#1c1e26'
     # background: '#1d212a'
-    background: '#282828'
+    # background: '#282828'
     foreground: '#e1e4e8'
   normal:
     black:   '#282c34'
@@ -138,7 +138,7 @@ colors:
     cyan:    '#3c909b'
     white:   '#828997'
 
-background_opacity: 1
+# background_opacity: 1
 
 # Visual Bell
 #

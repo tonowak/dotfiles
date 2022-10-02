@@ -16,23 +16,31 @@ output * bg $HOME/.config/wallpaper.jpg fill
 
 exec env -u WAYLAND_DISPLAY light-locker
 exec kanshi
+exec wlsunset -l 53.4 -L 14.5 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 font pango:Ubuntu 12
-# for_window [title=".*"] floating enable
-# for_window [app_id="Alacritty"] floating disable
-# for_window [class="Brave-browser"] floating disable
-default_border normal 2
-default_floating_border pixel 2
-titlebar_border_thickness 2
+for_window [title=".*"] floating enable
+for_window [app_id="Alacritty"] floating disable
+for_window [class="Brave-browser"] floating disable
+default_border normal 4
+default_floating_border normal 4
+titlebar_border_thickness 4
 titlebar_padding 10 4
-gaps inner 20
+gaps inner 10
 smart_borders off
 smart_gaps off
 
-client.focused #282828 #282828 #c8ccd4 #282828 #282828
-client.unfocused #282828 #282828 #828997 #98c379 #282828
-client.focused_inactive #282828 #282828 #828997 #98c379 #282828
-client.urgent #e06c75 #e06c75 #c8ccd4 #98c379 #e06c75
+set $background #181a20
+set $foreground #c8ccd4
+set $foreground_dark #828997
+set $green #98c379
+set $red #e06c75
+client.focused $background $background $foreground $background $background
+client.unfocused $background $background $foreground_dark $background $background
+client.focused_inactive $background $background $foreground_dark $background $background
+client.urgent $red $red $foreground $background $red
 
 focus_follows_mouse no
 focus_on_window_activation focus
